@@ -40,7 +40,7 @@ public final class CustomDistribution {
 	 */
 	public static boolean distributionWantsOtherAccounts() {
 		//return true;
-		return true;
+		return false;
 	}
 	
 	/**
