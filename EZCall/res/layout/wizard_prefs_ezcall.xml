@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	Copyright (C) 2010 Regis Montoya (aka r3gis - www.r3gis.fr) 
+
+	This file is part of CSipSimple.
+    CSipSimple is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+	If you own a pjsip commercial license you can also redistribute it
+	and/or modify it under the terms of the GNU Lesser General Public License
+	as an android library.
+
+    CSipSimple is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CSipSimple.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/settings_container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/validation_bar"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/custom_wizard_row"
+            android:layout_width="fill_parent"
+            android:layout_height="?android:attr/listPreferredItemHeight"
+            android:background="?attr/actionBarItemBackground"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/custom_wizard_text"
+                android:layout_width="fill_parent"
+                android:layout_height="0dip"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingLeft="12dip"
+                android:paddingRight="12dip"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:background="@android:drawable/divider_horizontal_dark"
+                android:contentDescription="@string/empty_description" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:fadingEdge="vertical"
+            android:scrollbars="vertical" >
+
+            <LinearLayout
+                android:id="@+id/custom_wizard_refill"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top|center"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/refill_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0.0dip"
+                    android:text="申請:\n請輸入系統碼(2碼)+序號(12碼)\n若您不知道序號，請聯絡您的營運商\n"
+                    android:textSize="16.0dip" />
+
+                <LinearLayout
+                    android:id="@+id/refill_no_row"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <EditText
+                        android:id="@+id/refill_no0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2.0dip"
+                        android:ems="2"
+                        android:inputType="phone"
+                        android:maxLength="2" />
+
+                    <TextView
+                        android:id="@+id/column_space"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2.0dip"
+                        android:text=" + " />
+
+                    <EditText
+                        android:id="@+id/refill_no1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2.0dip"
+                        android:ems="12"
+                        android:inputType="phone"
+                        android:maxLength="12" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/refill_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5.0dip"
+                    android:text="Refill" />
+
+                <LinearLayout
+                    android:id="@+id/refill_message"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:id="@+id/readme_agent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="0.0dip"
+                        android:layout_marginTop="20.0dip"
+                        android:text="================================\n若您使用有任何問題，請聯絡您的營運商\n營  運  商：EZCall\n連絡電話：0123456789\n帳　　號：xxxxxxxxx"
+                        android:textSize="16.0dip" />
+
+                    <Button
+                        android:id="@+id/readme_link"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5.0dip"
+                        android:text="EZCall使用說明" />
+
+                    <TextView
+                        android:id="@+id/refill_atm_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="0.0dip"
+                        android:layout_marginTop="20.0dip"
+                        android:text="================================\nATM充值\n銀行代碼: xxxxx\n轉帳帳號：xxxxx\n"
+                        android:textSize="16.0dip" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <ListView
+            android:id="@android:id/list"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:drawSelectorOnTop="false"
+            android:layoutAnimation="@anim/layout_slide_right"
+            android:persistentDrawingCache="animation|scrolling"
+            android:visibility="visible" />
+    </LinearLayout>
+    <!--
+    <LinearLayout
+        android:id="@+id/validation_bar"
+        style="@style/ButtonBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <Button
+            android:id="@+id/reg_btn"
+            style="@style/ButtonBarButton"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="regist?" />
+    </LinearLayout>
+    -->
+
+</RelativeLayout>
