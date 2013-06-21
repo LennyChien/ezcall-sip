@@ -3,6 +3,8 @@
 /CSipSimpleCodecG729
 /CSipSimpleCodecPack
 /EZCall/jni/*
+/EZCall/bin/
+/EZCall/gen/
 /EZCall/libs/
 /EZCall/obj/
 /EZCall/src/org/pjsip/
