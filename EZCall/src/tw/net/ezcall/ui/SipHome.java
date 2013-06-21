@@ -77,7 +77,7 @@ import tw.net.ezcall.utils.PreferencesWrapper;
 import tw.net.ezcall.utils.Theme;
 import tw.net.ezcall.utils.UriUtils;
 import tw.net.ezcall.utils.backup.BackupWrapper;
-import tw.net.ezcall.wizards.BasePrefsWizard;
+import tw.net.ezcall.wizards.EZCallPrefsWizard;
 import tw.net.ezcall.wizards.WizardUtils.WizardInfo;
 
 import java.util.ArrayList;
@@ -562,7 +562,7 @@ public class SipHome extends SherlockFragmentActivity implements
 				WizardInfo distribWizard = CustomDistribution
 						.getCustomDistributionWizard();
 				if (distribWizard != null) {
-					accountIntent = new Intent(this, BasePrefsWizard.class);
+					accountIntent = new Intent(this, EZCallPrefsWizard.class);
 					accountIntent.putExtra(SipProfile.FIELD_WIZARD,
 							distribWizard.id);
 				} else {
@@ -904,7 +904,7 @@ public class SipHome extends SherlockFragmentActivity implements
 					SipProfile.FIELD_WIZARD + "=?",
 					new String[] { distribWizard.id }, null);
 
-			Intent it = new Intent(this, BasePrefsWizard.class);
+			Intent it = new Intent(this, EZCallPrefsWizard.class);
 			it.putExtra(SipProfile.FIELD_WIZARD, distribWizard.id);
 			Long accountId = null;
 			if (c != null && c.getCount() > 0) {
