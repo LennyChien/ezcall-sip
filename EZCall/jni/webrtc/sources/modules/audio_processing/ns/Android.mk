@@ -61,7 +61,7 @@ GEN := $(LOCAL_PATH)/nsx_core_neon_offsets.h
 
 # Generate a header file nsx_core_neon_offsets.h which will be included in
 # assembly file nsx_core_neon.S, from file nsx_core_neon_offsets.c.
-$(GEN): $(LOCAL_PATH)/../../../../src/build/generate_asm_header.py \
+$(GEN): $(LOCAL_PATH)/../../../build/generate_asm_header.py \
             $(intermediates)/nsx_core_neon_offsets.S
 	@python $^ $@ offset_nsx_
 
@@ -70,7 +70,7 @@ $(intermediates)/nsx_core_neon_offsets.S: $(LOCAL_PATH)/nsx_core_neon_offsets.c
             $(TARGET_C_INCLUDES)) -S -o $@ $^
 
 LOCAL_GENERATED_SOURCES := $(GEN)
-LOCAL_SRC_FILES := nsx_core_neon.S
+LOCAL_SRC_FILES := nsx_core_neon.c
 
 # Flags passed to both C and C++ files.
 LOCAL_CFLAGS := \

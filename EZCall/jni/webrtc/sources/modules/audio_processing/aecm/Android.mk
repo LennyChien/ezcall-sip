@@ -60,7 +60,7 @@ GEN := $(LOCAL_PATH)/aecm_core_neon_offsets.h
 
 # Generate a header file aecm_core_neon_offsets.h which will be included in
 # assembly file aecm_core_neon.S, from file aecm_core_neon_offsets.c.
-$(GEN): $(LOCAL_PATH)/../../../../src/build/generate_asm_header.py \
+$(GEN): $(LOCAL_PATH)/../../../build/generate_asm_header.py \
             $(intermediates)/aecm_core_neon_offsets.S
 	@python $^ $@ offset_aecm_
 
@@ -70,7 +70,7 @@ $(intermediates)/aecm_core_neon_offsets.S: \
             $(TARGET_C_INCLUDES)) -S -o $@ $^
 
 LOCAL_GENERATED_SOURCES := $(GEN)
-LOCAL_SRC_FILES := aecm_core_neon.S
+LOCAL_SRC_FILES := aecm_core_neon.c
 
 # Flags passed to both C and C++ files.
 LOCAL_CFLAGS := \

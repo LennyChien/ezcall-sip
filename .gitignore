@@ -1,0 +1,8 @@
+/ActionBarSherlock
+/CSipSimpleCrypto
+/CSipSimpleCodecG729
+/CSipSimpleCodecPack
+/EZCall/jni/*
+/EZCall/libs/
+/EZCall/obj/
+/EZCall/src/org/pjsip/

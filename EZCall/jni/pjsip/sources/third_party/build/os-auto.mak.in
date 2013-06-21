@@ -31,3 +31,4 @@ DIRS += portaudio
 endif
 endif
 
+DIRS += webrtc
